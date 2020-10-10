@@ -50,8 +50,8 @@ export default {
     return {
       // 这是登录表单的数据绑定对象
       loginForm: {
-        username: '',
-        password: '',
+        username: 'admin',
+        password: '123456',
       },
       //这是表单的验证规则对象
       loginFormRules: {
@@ -91,7 +91,7 @@ export default {
         if (!valid) return
         //第一个参数是请求地址，第二个参数是请求参数
         // post请求返回的结果是Promise对象，可以通过async-await方式接收结果
-        //{data:res}是对象结构赋值，得到的结果是结果对象中的data属性的值，将将其重命名为res对象
+        //{data:res}是对象解构赋值，得到的结果是结果对象中的data属性的值，将将其重命名为res对象
         const { data: res } = await this.$http.post('login', this.loginForm)
         if (res.meta.status !== 200) return this.$message.error('登录失败')
         this.$message.success('登录成功')
