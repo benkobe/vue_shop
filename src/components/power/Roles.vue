@@ -222,7 +222,7 @@ export default {
         return this.$message.error('获取角色列表失败')
       }
       this.roleslist = res.data
-      console.log(this.roleslist)
+      // console.log(this.roleslist)
     },
     async removeRightById(role, rightId) {
       //弹框提示用户是否确认删除

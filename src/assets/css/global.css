@@ -21,3 +21,10 @@ body,
     margin-top: 15px;
     font-size: 12px;
 }
+
+
+/* 设置级联选择器弹出框的高度 */
+
+.el-cascader-panel {
+    height: 500px
+}
