@@ -35,7 +35,11 @@ import {
     Tree,
     Select,
     Option,
-    Cascader
+    Cascader,
+    Alert,
+    Tabs,
+    TabPane
+
 
 } from 'element-ui'
 
@@ -66,6 +70,9 @@ Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
 Vue.use(Cascader)
+Vue.use(Alert)
+Vue.use(Tabs)
+Vue.use(TabPane)
 
 //$message是可以任意命名的，等号右边的message就和导入组件时的名字一样
 //将Message组件挂载到Vue实例的原型上，$message就变成了原型上的一个自定义属性了，这样每个组件就能通过this.$message的方式使用message弹框组件
