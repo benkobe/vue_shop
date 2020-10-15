@@ -28,3 +28,10 @@ body,
 .el-cascader-panel {
     height: 500px
 }
+
+
+/* 副文本的编辑文本区域的最小高度 */
+
+.ql-editor {
+    min-height: 300px;
+}

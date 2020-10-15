@@ -6,7 +6,7 @@
       <el-breadcrumb-item>用户管理</el-breadcrumb-item>
       <el-breadcrumb-item>用户列表</el-breadcrumb-item>
     </el-breadcrumb>
-    <!-- 卡片试图区域 -->
+    <!-- 卡片视图区域 -->
     <el-card>
       <!-- 搜索与添加用户区域 -->
       <!-- 动态绑定gutter属性，表示row中各个col之间的间距 -->
