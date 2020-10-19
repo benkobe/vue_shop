@@ -36,6 +36,8 @@ module.exports = {
         "prefer-const": 0,
         "quotes": 0,
         "spaced-comment": 0,
-        "comma-dangle": 0
+        "comma-dangle": 0,
+        "space-in-parens": 0,
+        "func-call-spacing": ["error", "never"]
     }
 }

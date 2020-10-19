@@ -16,16 +16,29 @@ import 'quill/dist/quill.core.css' // import styles
 import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 
+//导入NProgress包对应的js文件和css文件
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 import axios from 'axios'
 //配置请求根路径(后台服务器的根路径)
-axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
-    //axios请求拦截，必须在服务器端接收到请求之前拦截，因为需要对请求对象进行一些处理再发送到服务器端
-    //形参config表示请求对象
+axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/';
+//axios请求拦截，必须在服务器端接收到请求之前拦截，因为需要对请求对象进行一些处理再发送到服务器端
+//形参config表示请求对象
+//在requset拦截器中，展示进度条 NProgress.start()
 axios.interceptors.request.use(config => {
+    // 开启进度条
+    NProgress.start();
     //为请求头对象添加token验证的Authorization字段（其实就是为请求头添加一个Authorization属性，该属性的值是token请求携带的token）
     config.headers.Authorization = window.sessionStorage.getItem('token');
     //对请求对象处理完成之后必须return，不然服务器端就无法接收到请求
+    return config;
+});
+
+//在response拦截器中，隐藏进度条 NProgress.done()
+axios.interceptors.response.use(config => {
+    NProgress.done();
+    //对请求对象处理完成之后必须return，不然客户端就无法接收到请求
     return config;
 })
 Vue.prototype.$http = axios

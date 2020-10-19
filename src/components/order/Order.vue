@@ -10,8 +10,8 @@
     <el-card>
       <el-row>
         <el-col :span="8">
-          <el-input placeholder="请输入内容">
-            <el-button slot="append" icon="el-icon-search"></el-button>
+          <el-input placeholder="请输入内容" clearable v-model="queryInfo.query" @clear="getOrderList">
+            <el-button slot="append" icon="el-icon-search" @click="getOrderList"></el-button>
           </el-input>
         </el-col>
       </el-row>
@@ -212,5 +212,8 @@ export default {
 // @import '../../plugins/timeline-item/timeline-item.css';
 .el-cascader {
   width: 100%;
+}
+.el-pagination{
+  margin-top: 10px;
 }
 </style>

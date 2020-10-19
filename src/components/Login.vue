@@ -84,6 +84,7 @@ export default {
       this.$refs.loginFormRef.resetFields()
     },
     login() {
+      //表单的预验证
       // validate方法返回的回调函数的第一个参数是布尔值
       this.$refs.loginFormRef.validate(async (valid) => {
         //如果输入的用户名和密码都正确的话，输入true，否则输入false

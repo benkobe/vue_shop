@@ -30,7 +30,7 @@
       </el-row>
       <!-- 表格区域 -->
       <el-table :data="goodsList" stripe border="">
-        <el-table-column type="index"></el-table-column>
+        <el-table-column type="index" label="#"></el-table-column>
         <el-table-column prop="goods_name" label="商品名称"> </el-table-column>
         <el-table-column prop="goods_price" label="商品价格(元)" width="180px">
         </el-table-column>
@@ -148,4 +148,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.el-pagination{
+  margin-top: 10px;
+}
 </style>

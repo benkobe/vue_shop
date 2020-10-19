@@ -33,7 +33,7 @@
           <!-- 一级菜单 -->
           <!-- 给一级菜单动态绑定一个index的值，因为如果给了一个固定的index值，点击其中一个一级菜单就会把所有的一级菜单都会展开 -->
           <el-submenu
-            :index="item.id + ''"
+            :index="item.path + ''"
             :key="item.id"
             v-for="item in menulist"
           >
@@ -68,7 +68,7 @@
       </el-main>
     </el-container>
   </el-container>
-</template>>
+</template>
 <script>
 export default {
   data() {

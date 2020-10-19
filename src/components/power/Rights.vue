@@ -11,7 +11,7 @@
       <!-- 将权限列表数据的数组绑定到该form表单中 -->
       <!-- border属性是用来给表格添加边框的，stripe是用来给表格添加隔行变色效果的 -->
       <el-table :data="rightsList" border stripe>
-        <el-table-column type="index"></el-table-column>
+        <el-table-column type="index" label="#"></el-table-column>
         <!-- prop属性对应的是权限列表数据的数组中的对象中的键名的值 -->
         <el-table-column label="权限名称" prop="authName"></el-table-column>
         <el-table-column label="路径" prop="path"></el-table-column>

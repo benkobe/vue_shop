@@ -4,6 +4,7 @@
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>商品管理</el-breadcrumb-item>
+      <el-breadcrumb-item>商品列表</el-breadcrumb-item>
       <el-breadcrumb-item>添加商品</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- 卡片试图区域 -->
@@ -113,7 +114,7 @@
               :on-remove="handleRemove"
               list-type="picture"
               :headers="headers"
-              :on-success="handleSuucess"
+              :on-success="handleSuccess"
             >
               <el-button size="small" type="primary">点击上传</el-button>
               <div slot="tip" class="el-upload__tip">
@@ -298,7 +299,7 @@ export default {
       // console.log(this.addForm)
     },
     //监听图片上传成功的事件(获取图片上传成功之后服务器端返回的图片临时存放路径)
-    handleSuucess(response) {
+    handleSuccess(response) {
       // console.log(response)
       //拼接得到一个图片信息对象
       const picInfo = { pic: response.data.tmp_path }

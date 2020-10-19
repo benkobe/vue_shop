@@ -39,7 +39,7 @@
       <!-- 动态绑定data属性，userlist值表示用户列表数据 -->
       <el-table :data="userlist" border stripe>
         <!-- 为用户列表添加索引列 -->
-        <el-table-column type="index"></el-table-column>
+        <el-table-column type="index" label="#"></el-table-column>
         <!-- prop属性表示用户数据列表中的具体某一项数据 -->
         <!-- label表示数据属于哪一列 -->
         <el-table-column label="姓名" prop="username"></el-table-column>
@@ -121,7 +121,7 @@
     <el-dialog
       title="添加用户"
       :visible.sync="addDialogVisible"
-      width="30%"
+      width="50%"
       @close="addDialogClosed"
     >
       <!-- 动态绑定model属性，属性值为 添加用户的表单数据对象(指定表单) -->
@@ -204,7 +204,7 @@
           <!-- v-model双向绑定，选择好哪个选项之后，绑定的数据展示在select框中 -->
           <el-select v-model="selectedRoleId" placeholder="请选择">
             <!-- 动态绑定的label属性会展示在下拉选项中 -->
-            <!-- 动态绑定的label属性是展示在select框中的真正数据 -->
+            <!-- 动态绑定的value属性是展示在select框中的真正数据 -->
             <el-option
               v-for="item in roleList"
               :key="item.id"
@@ -487,7 +487,7 @@ export default {
         }
       ).catch((err) => err)
       //如果用户确认删除，返回值为字符串 confirm
-      //如果用户取消删除，返回值为字符串 cancle
+      //如果用户取消删除，返回值为字符串 cancel
       // console.log(confirmResult)
       if (confirmResult !== 'confirm') {
         return this.$message.info('已取消删除')
@@ -537,4 +537,7 @@ export default {
 }
 </script>>
 <style lang="less" scoped>
+.el-pagination{
+  margin-top: 10px;
+}
 </style>

@@ -1,17 +1,47 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../components/Login.vue'
-import Home from '../components/Home.vue'
-import Welcome from '../components/Welcome.vue'
-import Users from '../components/user/Users.vue'
-import Rights from '../components/power/Rights.vue'
-import Roles from '../components/power/Roles.vue'
-import Cate from '../components/goods/Cate.vue'
-import Params from '../components/goods/Params.vue'
-import GoodsList from '../components/goods/List.vue'
-import AddGoods from '../components/goods/AddGoods.vue'
-import Order from '../components/order/Order.vue'
-import Report from '../components/report/Report.vue'
+
+// import Login from '../components/Login.vue'
+const Login = () =>
+    import ( /* webpackChunkName: "login_home_welcome" */ '../components/Login.vue');
+// import Home from '../components/Home.vue'
+const Home = () =>
+    import ( /* webpackChunkName: "login_home_welcome" */ '../components/Home.vue');
+// import Welcome from '../components/Welcome.vue'
+const Welcome = () =>
+    import ( /* webpackChunkName: "login_home_welcome" */ '../components/Welcome.vue');
+
+
+// import Users from '../components/user/Users.vue'
+const Users = () =>
+    import ( /* webpackChunkName: "users_rights_roles" */ '../components/user/Users.vue');
+// import Rights from '../components/power/Rights.vue'
+const Rights = () =>
+    import ( /* webpackChunkName: "users_rights_roles" */ '../components/power/Rights.vue');
+// import Roles from '../components/power/Roles.vue'
+const Roles = () =>
+    import ( /* webpackChunkName: "users_rights_roles" */ '../components/power/Roles.vue');
+
+// import Cate from '../components/goods/Cate.vue'
+const Cate = () =>
+    import ( /* webpackChunkName: "cate_params" */ '../components/goods/Cate.vue');
+// import Params from '../components/goods/Params.vue'
+const Params = () =>
+    import ( /* webpackChunkName: "cate_params" */ '../components/goods/Params.vue');
+
+// import GoodsList from '../components/goods/List.vue'
+const GoodsList = () =>
+    import ( /* webpackChunkName: "goodslist_addgoods" */ '../components/goods/List.vue');
+// import AddGoods from '../components/goods/AddGoods.vue'
+const AddGoods = () =>
+    import ( /* webpackChunkName: "goodslist_addgoods" */ '../components/goods/AddGoods.vue');
+
+// import Order from '../components/order/Order.vue'
+const Order = () =>
+    import ( /* webpackChunkName: "order_report" */ '../components/order/Order.vue');
+// import Report from '../components/report/Report.vue'
+const Report = () =>
+    import ( /* webpackChunkName: "order_report" */ '../components/report/Report.vue');
 
 Vue.use(VueRouter)
 
@@ -50,7 +80,7 @@ router.beforeEach((to, from, next) => {
     const tokenStr = window.sessionStorage.getItem('token');
     //如果没有token(即token是一个空字符串)，就强制跳转到登录页面
     if (!tokenStr) return next('/login');
-    //如果有token就让用户继续访问下去
+    //如果有token就让用户继续访问用户输入的网址
     next();
 })
 

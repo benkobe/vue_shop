@@ -78,7 +78,7 @@
               </template>
             </el-table-column>
             <!-- 索引列 -->
-            <el-table-column type="index"></el-table-column>
+            <el-table-column type="index" label="#"></el-table-column>
             <!-- prop属性绑定的值是el-table标签中data属性绑定的值(对象)中的attr_name,即prop属性绑定的值是这一列的数据来源 -->
             <el-table-column
               label="参数名称"
@@ -149,7 +149,7 @@
             </el-table-column>
             </el-table-column>
             <!-- 索引列 -->
-            <el-table-column type="index"></el-table-column>
+            <el-table-column type="index" label="#"></el-table-column>
             <el-table-column
               label="属性名称"
               prop="attr_name"
